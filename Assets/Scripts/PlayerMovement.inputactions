@@ -2,16 +2,16 @@
     "name": "PlayerMovement",
     "maps": [
         {
-            "name": "Music/Fight",
+            "name": "FightMusic",
             "id": "cbe8fc86-477b-4fd4-b293-f2a4ad29ec1a",
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "1e1f7258-8c53-49b3-9ece-20895a22fa45",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Tap"
                 }
             ],
             "bindings": [

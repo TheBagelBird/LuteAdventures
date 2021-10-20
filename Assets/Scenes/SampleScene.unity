@@ -278,7 +278,7 @@ MonoBehaviour:
   movePoint: {fileID: 1139342495}
   obstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!212 &858720210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: c5c7e7dbbb4c1a241b5892b8c8e21cd1, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -436,7 +436,7 @@ MonoBehaviour:
     m_ActionName: Main/Music Movement[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Music/Fight
+  m_DefaultActionMap: FightMusic
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &878081886

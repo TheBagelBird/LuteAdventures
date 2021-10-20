@@ -15,16 +15,16 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
     ""name"": ""PlayerMovement"",
     ""maps"": [
         {
-            ""name"": ""Music/Fight"",
+            ""name"": ""FightMusic"",
             ""id"": ""cbe8fc86-477b-4fd4-b293-f2a4ad29ec1a"",
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""1e1f7258-8c53-49b3-9ece-20895a22fa45"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
-                    ""interactions"": ""Press""
+                    ""interactions"": ""Tap""
                 }
             ],
             ""bindings"": [
@@ -226,9 +226,9 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
         }
     ]
 }");
-        // Music/Fight
-        m_MusicFight = asset.FindActionMap("Music/Fight", throwIfNotFound: true);
-        m_MusicFight_Movement = m_MusicFight.FindAction("Movement", throwIfNotFound: true);
+        // FightMusic
+        m_FightMusic = asset.FindActionMap("FightMusic", throwIfNotFound: true);
+        m_FightMusic_Movement = m_FightMusic.FindAction("Movement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -275,29 +275,29 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Music/Fight
-    private readonly InputActionMap m_MusicFight;
-    private IMusicFightActions m_MusicFightActionsCallbackInterface;
-    private readonly InputAction m_MusicFight_Movement;
-    public struct MusicFightActions
+    // FightMusic
+    private readonly InputActionMap m_FightMusic;
+    private IFightMusicActions m_FightMusicActionsCallbackInterface;
+    private readonly InputAction m_FightMusic_Movement;
+    public struct FightMusicActions
     {
         private @PlayerMovement m_Wrapper;
-        public MusicFightActions(@PlayerMovement wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_MusicFight_Movement;
-        public InputActionMap Get() { return m_Wrapper.m_MusicFight; }
+        public FightMusicActions(@PlayerMovement wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_FightMusic_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_FightMusic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(MusicFightActions set) { return set.Get(); }
-        public void SetCallbacks(IMusicFightActions instance)
+        public static implicit operator InputActionMap(FightMusicActions set) { return set.Get(); }
+        public void SetCallbacks(IFightMusicActions instance)
         {
-            if (m_Wrapper.m_MusicFightActionsCallbackInterface != null)
+            if (m_Wrapper.m_FightMusicActionsCallbackInterface != null)
             {
-                @Movement.started -= m_Wrapper.m_MusicFightActionsCallbackInterface.OnMovement;
-                @Movement.performed -= m_Wrapper.m_MusicFightActionsCallbackInterface.OnMovement;
-                @Movement.canceled -= m_Wrapper.m_MusicFightActionsCallbackInterface.OnMovement;
+                @Movement.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
             }
-            m_Wrapper.m_MusicFightActionsCallbackInterface = instance;
+            m_Wrapper.m_FightMusicActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Movement.started += instance.OnMovement;
@@ -306,7 +306,7 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
             }
         }
     }
-    public MusicFightActions @MusicFight => new MusicFightActions(this);
+    public FightMusicActions @FightMusic => new FightMusicActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -325,7 +325,7 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_ControllerSchemeIndex];
         }
     }
-    public interface IMusicFightActions
+    public interface IFightMusicActions
     {
         void OnMovement(InputAction.CallbackContext context);
     }
