@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +20,41 @@ public class PlayerController : MonoBehaviour
 
     //variable to retrieve the action assets
     InputActionAsset actions;
+
+    [SerializeField] private int healthPlayer = 6;
+    [SerializeField] private Text healthPlayerText ;
+
+
+
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+
+
+        Debug.Log("Player has collided with something");
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("supposed to destroy the enemy ");
+            //Destroy(other.gameObject);
+
+
+            healthPlayer -= 1;
+            healthPlayerText.text = "healthPlayer  : " + healthPlayer.ToString();
+        }
+
+
+
+    }
+    
+
+
+
+
+
+
+
 
     //Almost exactly like Start(), just starts faster
     private void Awake()
@@ -44,6 +82,13 @@ public class PlayerController : MonoBehaviour
             // Check if we have horizontal movement
             if (movement.x != 0f)
             {
+
+                 /*
+                Debug.Log("*************************" );
+                Debug.Log("movement sideways " );
+                Debug.Log("movement.y : " + movement.y);
+                Debug.Log("movement.x : " + movement.x);
+                */
                 //Checks if there is any obstacle in the way in the "Stop Movement" layer and keeps the player from moving if there is any
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(movement.x, 0f, 0f), .2f, obstacleMask))
                 {
@@ -54,6 +99,15 @@ public class PlayerController : MonoBehaviour
             // Check if we have vertical movement
             if (movement.y != 0f)
             {
+
+
+                /*
+                Debug.Log("*************************");
+                Debug.Log("movement vertical ");
+                Debug.Log("movement.y : " + movement.y);
+                Debug.Log("movement.x : " + movement.x);
+                */
+                
                 //Checks if there is any obstacle in the way in the "Stop Movement" layer and keeps the player from moving if there is any
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, movement.y, 0f), .2f, obstacleMask))
                 {
