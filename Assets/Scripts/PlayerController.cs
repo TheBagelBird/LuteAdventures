@@ -83,12 +83,12 @@ public class PlayerController : MonoBehaviour
             if (movement.x != 0f)
             {
 
-                 /*
-                Debug.Log("*************************" );
-                Debug.Log("movement sideways " );
-                Debug.Log("movement.y : " + movement.y);
-                Debug.Log("movement.x : " + movement.x);
-                */
+                /*
+               Debug.Log("*************************" );
+               Debug.Log("movement sideways " );
+               Debug.Log("movement.y : " + movement.y);
+               Debug.Log("movement.x : " + movement.x);
+               */
                 //Checks if there is any obstacle in the way in the "Stop Movement" layer and keeps the player from moving if there is any
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(movement.x, 0f, 0f), .2f, obstacleMask))
                 {
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("movement.y : " + movement.y);
                 Debug.Log("movement.x : " + movement.x);
                 */
-                
+
                 //Checks if there is any obstacle in the way in the "Stop Movement" layer and keeps the player from moving if there is any
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, movement.y, 0f), .2f, obstacleMask))
                 {
