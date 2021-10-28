@@ -23,8 +23,16 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""1e1f7258-8c53-49b3-9ece-20895a22fa45"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""NormalizeVector2"",
-                    ""interactions"": ""Tap""
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.05)""
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Value"",
+                    ""id"": ""54146f36-2b38-499b-b54e-a23da00d38bd"",
+                    ""expectedControlType"": ""Digital"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -192,6 +200,39 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Button With One Modifier"",
+                    ""id"": ""ec2a9e17-48cb-4d26-9441-32af8ed5db25"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""ac7d4f5d-c63e-442e-8943-3537ba6e8720"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""feb59bf5-4e08-4e81-8abf-00cc6da2c12f"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -229,6 +270,7 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
         // FightMusic
         m_FightMusic = asset.FindActionMap("FightMusic", throwIfNotFound: true);
         m_FightMusic_Movement = m_FightMusic.FindAction("Movement", throwIfNotFound: true);
+        m_FightMusic_Attack = m_FightMusic.FindAction("Attack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -279,11 +321,13 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
     private readonly InputActionMap m_FightMusic;
     private IFightMusicActions m_FightMusicActionsCallbackInterface;
     private readonly InputAction m_FightMusic_Movement;
+    private readonly InputAction m_FightMusic_Attack;
     public struct FightMusicActions
     {
         private @PlayerMovement m_Wrapper;
         public FightMusicActions(@PlayerMovement wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_FightMusic_Movement;
+        public InputAction @Attack => m_Wrapper.m_FightMusic_Attack;
         public InputActionMap Get() { return m_Wrapper.m_FightMusic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -296,6 +340,9 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
+                @Attack.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_FightMusicActionsCallbackInterface = instance;
             if (instance != null)
@@ -303,6 +350,9 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -328,5 +378,6 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
     public interface IFightMusicActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
 }

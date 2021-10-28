@@ -10,8 +10,16 @@
                     "type": "Value",
                     "id": "1e1f7258-8c53-49b3-9ece-20895a22fa45",
                     "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
-                    "interactions": "Tap"
+                    "processors": "",
+                    "interactions": "Tap(duration=0.05)"
+                },
+                {
+                    "name": "Attack",
+                    "type": "Value",
+                    "id": "54146f36-2b38-499b-b54e-a23da00d38bd",
+                    "expectedControlType": "Digital",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -177,6 +185,39 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "ec2a9e17-48cb-4d26-9441-32af8ed5db25",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "ac7d4f5d-c63e-442e-8943-3537ba6e8720",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "feb59bf5-4e08-4e81-8abf-00cc6da2c12f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

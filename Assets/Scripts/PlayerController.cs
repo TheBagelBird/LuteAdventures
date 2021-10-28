@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
         Vector2 movement = actions.FindAction("Movement").ReadValue<Vector2>();
 
         //Makes it so that you can only move if the distance between the move point and the player is below or equal 0.5 units
-        if (Vector2.Distance(transform.position, movePoint.position) <= .5f)
+        if (Vector2.Distance(transform.position, movePoint.position) <= 0.4f)
         {
             // Check if we have horizontal movement
             if (movement.x != 0f)
@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
     }
 }
 
