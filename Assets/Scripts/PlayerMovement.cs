@@ -27,12 +27,36 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                     ""interactions"": ""Tap(duration=0.05)""
                 },
                 {
-                    ""name"": ""Attack"",
-                    ""type"": ""Value"",
-                    ""id"": ""54146f36-2b38-499b-b54e-a23da00d38bd"",
-                    ""expectedControlType"": ""Digital"",
+                    ""name"": ""Attack Up"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ec5d7c4-5771-4362-903d-466f9e0a77f8"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Tap""
+                    ""interactions"": ""Tap(duration=0.05)""
+                },
+                {
+                    ""name"": ""Attack Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""998bc65c-61ed-43ec-93fa-8db70c8a5d01"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.05)""
+                },
+                {
+                    ""name"": ""Attack Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""f91ac837-37a8-4ce3-9087-adb4bcd309ab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.05)""
+                },
+                {
+                    ""name"": ""Attack Down"",
+                    ""type"": ""Button"",
+                    ""id"": ""e457dd83-659b-4fe6-827c-dee0defa64c0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap(duration=0.05)""
                 }
             ],
             ""bindings"": [
@@ -202,68 +226,134 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Down Attack"",
-                    ""id"": ""ec2a9e17-48cb-4d26-9441-32af8ed5db25"",
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""f930e5bc-96c3-4ab7-971d-bd7ff0fe0cc4"",
                     ""path"": ""ButtonWithOneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""Attack Down"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""modifier"",
-                    ""id"": ""ac7d4f5d-c63e-442e-8943-3537ba6e8720"",
+                    ""id"": ""ec48a366-9d7b-4e24-ad8a-5d8104c93ac0"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Attack"",
+                    ""action"": ""Attack Down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""button"",
-                    ""id"": ""feb59bf5-4e08-4e81-8abf-00cc6da2c12f"",
+                    ""id"": ""1f930d06-fca4-4f5c-82ae-bf72b9d7d54f"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Attack"",
+                    ""action"": ""Attack Down"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Up Attack"",
-                    ""id"": ""4eb823e9-8dc2-4035-a202-e6c3e9240a3e"",
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""f3e47051-8c28-4b74-9be6-d545f6d817cb"",
                     ""path"": ""ButtonWithOneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""Attack Up"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""modifier"",
-                    ""id"": ""3ffdfec3-8197-46e3-88dc-e14a627f6bc5"",
+                    ""id"": ""03b6f9af-fbc3-4f30-918b-acd87ca24c16"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Attack"",
+                    ""action"": ""Attack Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""button"",
-                    ""id"": ""2fe32c48-67a3-4895-814c-5a530f3b52a1"",
+                    ""id"": ""7fc4b267-6881-40d7-98a0-232c95fbfa70"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Attack"",
+                    ""action"": ""Attack Up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""c1c4202b-6e82-4a81-a481-cfe377ec008f"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack Right"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""9fcf1650-3e14-496a-bb62-4130ebc3f251"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Attack Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""b98d53dd-306a-4fb3-81f4-55a691425950"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Attack Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""63e74000-e61d-4c63-8fe8-0a3c8004d310"",
+                    ""path"": ""ButtonWithOneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack Left"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""4a3d41a9-4491-453c-9d40-73d6517a9b62"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Attack Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""button"",
+                    ""id"": ""690163b5-4f63-4b92-b39a-5c3dff6bcdd6"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Attack Left"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -303,7 +393,10 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
         // FightMusic
         m_FightMusic = asset.FindActionMap("FightMusic", throwIfNotFound: true);
         m_FightMusic_Movement = m_FightMusic.FindAction("Movement", throwIfNotFound: true);
-        m_FightMusic_Attack = m_FightMusic.FindAction("Attack", throwIfNotFound: true);
+        m_FightMusic_AttackUp = m_FightMusic.FindAction("Attack Up", throwIfNotFound: true);
+        m_FightMusic_AttackRight = m_FightMusic.FindAction("Attack Right", throwIfNotFound: true);
+        m_FightMusic_AttackLeft = m_FightMusic.FindAction("Attack Left", throwIfNotFound: true);
+        m_FightMusic_AttackDown = m_FightMusic.FindAction("Attack Down", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -354,13 +447,19 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
     private readonly InputActionMap m_FightMusic;
     private IFightMusicActions m_FightMusicActionsCallbackInterface;
     private readonly InputAction m_FightMusic_Movement;
-    private readonly InputAction m_FightMusic_Attack;
+    private readonly InputAction m_FightMusic_AttackUp;
+    private readonly InputAction m_FightMusic_AttackRight;
+    private readonly InputAction m_FightMusic_AttackLeft;
+    private readonly InputAction m_FightMusic_AttackDown;
     public struct FightMusicActions
     {
         private @PlayerMovement m_Wrapper;
         public FightMusicActions(@PlayerMovement wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_FightMusic_Movement;
-        public InputAction @Attack => m_Wrapper.m_FightMusic_Attack;
+        public InputAction @AttackUp => m_Wrapper.m_FightMusic_AttackUp;
+        public InputAction @AttackRight => m_Wrapper.m_FightMusic_AttackRight;
+        public InputAction @AttackLeft => m_Wrapper.m_FightMusic_AttackLeft;
+        public InputAction @AttackDown => m_Wrapper.m_FightMusic_AttackDown;
         public InputActionMap Get() { return m_Wrapper.m_FightMusic; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -373,9 +472,18 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnMovement;
-                @Attack.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttack;
-                @Attack.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttack;
-                @Attack.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttack;
+                @AttackUp.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackUp;
+                @AttackUp.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackUp;
+                @AttackUp.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackUp;
+                @AttackRight.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackRight;
+                @AttackRight.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackRight;
+                @AttackRight.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackRight;
+                @AttackLeft.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackLeft;
+                @AttackLeft.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackLeft;
+                @AttackLeft.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackLeft;
+                @AttackDown.started -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackDown;
+                @AttackDown.performed -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackDown;
+                @AttackDown.canceled -= m_Wrapper.m_FightMusicActionsCallbackInterface.OnAttackDown;
             }
             m_Wrapper.m_FightMusicActionsCallbackInterface = instance;
             if (instance != null)
@@ -383,9 +491,18 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
+                @AttackUp.started += instance.OnAttackUp;
+                @AttackUp.performed += instance.OnAttackUp;
+                @AttackUp.canceled += instance.OnAttackUp;
+                @AttackRight.started += instance.OnAttackRight;
+                @AttackRight.performed += instance.OnAttackRight;
+                @AttackRight.canceled += instance.OnAttackRight;
+                @AttackLeft.started += instance.OnAttackLeft;
+                @AttackLeft.performed += instance.OnAttackLeft;
+                @AttackLeft.canceled += instance.OnAttackLeft;
+                @AttackDown.started += instance.OnAttackDown;
+                @AttackDown.performed += instance.OnAttackDown;
+                @AttackDown.canceled += instance.OnAttackDown;
             }
         }
     }
@@ -411,6 +528,9 @@ public class @PlayerMovement : IInputActionCollection, IDisposable
     public interface IFightMusicActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
+        void OnAttackUp(InputAction.CallbackContext context);
+        void OnAttackRight(InputAction.CallbackContext context);
+        void OnAttackLeft(InputAction.CallbackContext context);
+        void OnAttackDown(InputAction.CallbackContext context);
     }
 }

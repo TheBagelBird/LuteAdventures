@@ -564,8 +564,10 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
+  playerSprite: {fileID: 878081886}
   healthPlayer: 0
   healthPlayerText: {fileID: 218208263}
+  attackButtonPressed: 0
 --- !u!212 &858720210
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4070,7 +4072,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.87, y: 6.03}
+    oldSize: {x: 5.65, y: 5.39}
     newSize: {x: 6.52, y: 7.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4138,8 +4140,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972951211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59, y: -0.47, z: 0}
-  m_LocalScale: {x: 0.1245, y: 0.1245, z: 0.1245}
+  m_LocalPosition: {x: -0.5021, y: -0.5028, z: 0}
+  m_LocalScale: {x: 0.17702448, y: 0.18543063, z: 0.1245}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5

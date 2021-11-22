@@ -14,12 +14,36 @@
                     "interactions": "Tap(duration=0.05)"
                 },
                 {
-                    "name": "Attack",
-                    "type": "Value",
-                    "id": "54146f36-2b38-499b-b54e-a23da00d38bd",
-                    "expectedControlType": "Digital",
+                    "name": "Attack Up",
+                    "type": "Button",
+                    "id": "3ec5d7c4-5771-4362-903d-466f9e0a77f8",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap"
+                    "interactions": "Tap(duration=0.05)"
+                },
+                {
+                    "name": "Attack Right",
+                    "type": "Button",
+                    "id": "998bc65c-61ed-43ec-93fa-8db70c8a5d01",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.05)"
+                },
+                {
+                    "name": "Attack Left",
+                    "type": "Button",
+                    "id": "f91ac837-37a8-4ce3-9087-adb4bcd309ab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.05)"
+                },
+                {
+                    "name": "Attack Down",
+                    "type": "Button",
+                    "id": "e457dd83-659b-4fe6-827c-dee0defa64c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap(duration=0.05)"
                 }
             ],
             "bindings": [
@@ -189,68 +213,134 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Down Attack",
-                    "id": "ec2a9e17-48cb-4d26-9441-32af8ed5db25",
+                    "name": "Arrow Keys",
+                    "id": "f930e5bc-96c3-4ab7-971d-bd7ff0fe0cc4",
                     "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Attack Down",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "modifier",
-                    "id": "ac7d4f5d-c63e-442e-8943-3537ba6e8720",
+                    "id": "ec48a366-9d7b-4e24-ad8a-5d8104c93ac0",
                     "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack",
+                    "action": "Attack Down",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "button",
-                    "id": "feb59bf5-4e08-4e81-8abf-00cc6da2c12f",
+                    "id": "1f930d06-fca4-4f5c-82ae-bf72b9d7d54f",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack",
+                    "action": "Attack Down",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Up Attack",
-                    "id": "4eb823e9-8dc2-4035-a202-e6c3e9240a3e",
+                    "name": "Arrow Keys",
+                    "id": "f3e47051-8c28-4b74-9be6-d545f6d817cb",
                     "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "Attack Up",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "modifier",
-                    "id": "3ffdfec3-8197-46e3-88dc-e14a627f6bc5",
+                    "id": "03b6f9af-fbc3-4f30-918b-acd87ca24c16",
                     "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack",
+                    "action": "Attack Up",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "button",
-                    "id": "2fe32c48-67a3-4895-814c-5a530f3b52a1",
+                    "id": "7fc4b267-6881-40d7-98a0-232c95fbfa70",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Attack",
+                    "action": "Attack Up",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Arrow Keys",
+                    "id": "c1c4202b-6e82-4a81-a481-cfe377ec008f",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack Right",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "9fcf1650-3e14-496a-bb62-4130ebc3f251",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Attack Right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "b98d53dd-306a-4fb3-81f4-55a691425950",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Attack Right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Arrow Keys",
+                    "id": "63e74000-e61d-4c63-8fe8-0a3c8004d310",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack Left",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "4a3d41a9-4491-453c-9d40-73d6517a9b62",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Attack Left",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "690163b5-4f63-4b92-b39a-5c3dff6bcdd6",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Attack Left",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
